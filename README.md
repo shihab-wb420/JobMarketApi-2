@@ -1,27 +1,24 @@
-# JobMarketApi-2
+
 
 ```markdown
-# Job Board API
+# JobMarketApi-2
 
-A RESTful API for managing job postings, filtering job listings, and applying for jobs.
+This is the backend API for a job market platform. It provides endpoints for creating job listings, filtering job listings, and applying for jobs.
 
 ## Table of Contents
 
 - [Features](#features)
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
-- [Endpoints](#endpoints)
-- [Authentication and Authorization](#authentication-and-authorization)
+- [API Endpoints](#api-endpoints)
 - [Usage](#usage)
 - [License](#license)
 
 ## Features
 
-- Create job postings with title, company, location, salary, description, tags, and more.
-- Get job listings, filter by various parameters (e.g., title, location, tags), and sort them by date or salary.
-- Apply to job postings.
-- User authentication and authorization, allowing only registered company users to create and update job posts.
-- Pagination support for job listings.
+- Create job postings with details like title, company, location, salary, and description.
+- Retrieve job listings, filter by various parameters, and sort them.
+- Allow users to apply for job listings.
 
 ## Requirements
 
@@ -32,47 +29,38 @@ A RESTful API for managing job postings, filtering job listings, and applying fo
 ## Getting Started
 
 1. Clone the repository:
+
    ```sh
-   git clone https://github.com/yourusername/job-board-api.git
+   git clone https://github.com/yourusername/JobMarketApi-2.git
    ```
 
 2. Install dependencies with Yarn:
+
    ```sh
-   cd job-board-api
+   cd JobMarketApi-2
    yarn install
    ```
 
-3. Set up a MongoDB database.
+3. Set up a MongoDB database and update the `.env` file with your database URI and secret key.
 
-4. Create a `.env` file in the root directory and configure the following environment variables:
-   ```
-   MONGODB_URI=your_mongodb_uri
-   SECRET_KEY=your_secret_key
-   ```
+4. Start the server:
 
-5. Start the server:
    ```sh
    yarn start
    ```
 
-## Endpoints
+## API Endpoints
 
-- `POST /api/jobs/create`: Create a new job posting.
-- `GET /api/jobs`: Get job listings with optional query parameters for filtering and sorting.
-- `PUT /api/jobs/update/:id`: Update a job posting by ID.
-- `POST /api/jobs/apply/:id`: Apply to a job posting by ID.
-- `GET /api/jobs/filter`: Filter job listings with dynamic query parameters (title, location, company, tags, sort, experience, page, perPage).
+- `POST /api/jobs`: Create a new job posting.
+- `GET /api/jobs`: Get job listings with query parameters for filtering and sorting.
+- `PUT /api/jobs/:id/update`: Update a job posting by ID.
+- `POST /api/jobs/:id/apply`: Apply to a job posting by ID.
 
-## Authentication and Authorization
-
-- User authentication is required for creating job posts and applying for jobs.
-- Authorization is enforced to allow only registered users with the "company" role to create and update job posts.
 
 ## Usage
 
-- Access the API using the provided endpoints, and use the query parameters for filtering and sorting job listings.
-- Ensure user authentication and authorization for creating and updating job posts.
-- Customize the API as needed for your application.
+- Use the provided API endpoints to manage job listings and applications.
+- Customize the API as needed for your specific application.
 
 ## License
 
