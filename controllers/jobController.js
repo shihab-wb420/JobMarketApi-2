@@ -113,4 +113,5 @@ module.exports = {
   createJob,
   getJobs,
   updateJob,
+  applyToJob,
 }; 
