@@ -12,11 +12,10 @@ const jobSchema = new mongoose.Schema({
   applicants: [
     {
       applicantName: String,
-      resume: String,
       email: String,
-      phone: Number,
+      resume: String, // You can store a file path or use a cloud storage URL
+      phone: String,
       address: String,
-      
     },
   ],
   createdAt: {
